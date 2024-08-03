@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MintCode</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class=" bg-black">
-		<nav class="relative w-full border-b border-green-500/40  text-white">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MintCode</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-black overflow-hidden">
+		<nav class="relative w-full border-b border-green-500/40 text-white">
 			<div
 				class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 				<a href="./main.html" class="inline-flex items-center space-x-2">
@@ -24,50 +23,124 @@
 								fill="white"></path>
 						</svg>
 					</span>
-					<span class="font-bold text-lg"><span class="text-green-400/90">Mint</span>Code</span>
+					<span class="font-bold text-lg"
+						><span class="text-green-400/90">Mint</span>Code</span
+					>
 				</a>
 				<div class="space-x-2 block">
-                    <a href="./signup.html">
-					<button
-						type="button"
-						class="rounded-md border-green-500/40 border-2 px-6 py-2 text-sm font-semibold text-white hover:bg-green-500/40 transition-all  duration-300
-                        shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-						Sign<span class="text-green-400/90 font-bold">Up</span>
-					</button>
-                    </a>
+					<a href="./signup.html">
+						<button
+							type="button"
+							class="rounded-md border-green-500/40 border-2 px-6 py-2 text-sm font-semibold text-white hover:bg-green-500/40 transition-all duration-300 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+							Sign<span class="text-green-400/90 font-bold">Up</span>
+						</button>
+					</a>
 				</div>
 			</div>
 		</nav>
 		<section class="relative max-md:px-6">
-            <div class="z-20 relative mx-auto w-full max-md:w-full mt-5 flex justify-center items-center">
-                <form class="w-1/3 max-lg:w-1/2 max-md:w-full px-6">
-                <div class="border-b border-gray-900/10 pb-12 mt-20">
-                        <h2 class="text-2xl font-semibold leading-7 text-white">Log<span class="text-green-400/90">In</span> Information</h2>
-                        <div class="backdrop-blur-3xl mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4  place-content-center bg-white/10 rounded-3xl px-6 py-7">
-                        <div class="sm:col-span-4">
-                            <label for="email" class="block text-sm font-medium leading-6 text-white">Student <span class="text-green-400/90 font-bold ">Id</span></label>
-                            <div class="mt-2">
-                            <input id="text" name="studentId" type="text" autocomplete="studentId" class="  text-white bg-transparent  pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-                        <div class="sm:col-span-4">
-                            <label for="Password" class="block text-sm font-medium leading-6 text-white">Password</label>
-                            <div class="mt-2">
-                            <input id="Password" name="Password" type="password" autocomplete="new-password" class=" text-white bg-transparent  pl-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-					<button
-						type="button"
-						class="rounded-md border-green-500/40 border-2 px-6 py-2 text-sm font-semibold text-white hover:bg-green-500/40 transition-all  duration-300
-                        shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black w-40">
-						Log<span class="text-green-400/90 font-bold">In</span>
-					</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-			<div class="animate-spin absolute bg-gradient-to-r from-lime-900/60 to-green-500/30 h-[400px] rounded-full w-[380px] top-32 right-40 blur-3xl ">
-            </div>
+			<div
+				class="z-20 relative mx-auto w-full max-md:w-full mt-5 flex justify-center items-center">
+				<form class="w-1/3 max-lg:w-1/2 max-md:w-full px-6" id="loginform">
+					<div class="border-b border-gray-900/10 pb-12 mt-20">
+						<h2 class="text-2xl font-semibold leading-7 text-white"
+							>Log<span class="text-green-400/90">In</span> Information</h2
+						>
+						<div
+							class="backdrop-blur-3xl mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4 place-content-center bg-white/10 rounded-3xl px-6 py-7">
+							<div class="sm:col-span-4">
+								<label
+									for="email"
+									class="block text-sm font-medium leading-6 text-white"
+									>Student
+									<span class="text-green-400/90 font-bold">Id</span></label
+								>
+								<div class="mt-2">
+									<input
+										id="text"
+										name="studentId"
+										type="text"
+										autocomplete="studentId"
+										class="text-white bg-transparent pl-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+								</div>
+							</div>
+							<div class="sm:col-span-4">
+								<label
+									for="Password"
+									class="block text-sm font-medium leading-6 text-white"
+									>Password</label
+								>
+								<div class="mt-2">
+									<input
+										id="Password"
+										name="Password"
+										type="password"
+										autocomplete="password"
+										class="text-white bg-transparent pl-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+								</div>
+							</div>
+							<button
+								type="submit"
+								class="rounded-md border-green-500/40 border-2 px-6 py-2 text-sm font-semibold text-white hover:bg-green-500/40 transition-all duration-300 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black w-40">
+								Log<span class="text-green-400/90 font-bold">In</span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div
+				class="animate-spin absolute bg-gradient-to-r from-lime-900/60 to-green-500/30 h-[400px] rounded-full w-[380px] top-32 right-40 blur-3xl">
+			</div>
 		</section>
+		<script>
+			const loginForm = document.getElementById("loginForm");
+			document.addEventListener("DOMContentLoaded", () => {
+				const request = indexedDB.open("UserDatabase", 1);
+
+				request.onupgradeneeded = (event) => {
+					const db = event.target.result;
+					if (!db.objectStoreNames.contains("users")) {
+						db.createObjectStore("users", { keyPath: "studentId" });
+					}
+				};
+				request.onsuccess = (event) => {
+					const db = event.target.result;
+
+					const loginForm = document.getElementById("loginform");
+					loginForm.addEventListener("submit", (event) => {
+						event.preventDefault();
+
+						const studentId = event.target.studentId.value;
+						const password = event.target.Password.value;
+						const transaction = db.transaction(["users"], "readonly");
+						const objectStore = transaction.objectStore("users");
+						const request = objectStore.get(studentId);
+
+						request.onsuccess = (event) => {
+							const user = event.target.result;
+							if (user) {
+								if (user.password === password) {
+									alert("Login successful");
+									document.location.href = "/";
+									localStorage.setItem("userDetails", JSON.stringify(user));
+								} else {
+									alert("Incorrect password");
+								}
+							} else {
+								alert("No user found with this ID");
+							}
+						};
+
+						request.onerror = (event) => {
+							alert("Error retrieving data: " + event.target.error);
+						};
+					});
+				};
+
+				request.onerror = (event) => {
+					console.error("Database error: " + event.target.errorCode);
+				};
+			});
+		</script>
 	</body>
 </html>

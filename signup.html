@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>MintCode</title>
+		<link rel="shortcut icon" href="./favIcon.png" type="image/x-icon">
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body class="bg-black">
@@ -54,10 +55,10 @@
 								<label
 									for="first-name"
 									class="block text-sm font-medium leading-6 text-white"
-									>User name</label
-								>
+									>User name</label>
 								<div class="mt-2">
 									<input
+										required
 										type="text"
 										name="userName"
 										id="userName"
@@ -74,6 +75,7 @@
 								>
 								<div class="mt-2">
 									<input
+										required
 										id="studentId"
 										name="studentId"
 										type="text"
@@ -89,6 +91,7 @@
 								>
 								<div class="mt-2">
 									<input
+										required
 										id="Password"
 										name="Password"
 										type="password"
@@ -105,6 +108,7 @@
 								>
 								<div class="mt-2">
 									<input
+										required
 										id="cPassword"
 										name="cPassword"
 										type="password"
@@ -364,6 +368,59 @@
 				class="z-0 animate-spin absolute bg-gradient-to-r from-lime-900/60 to-green-500/30 h-[400px] rounded-full w-[380px] top-32 right-40 blur-3xl">
 			</div>
 		</section>
-		<script src="./main.js"></script>
+		<script>const signupform = document.getElementById("signUpForm");
+let db;
+const request = indexedDB.open("UserDatabase", 1);
+request.onerror = function (event) {
+	console.log("Error opening IndexedDB", event);
+};
+request.onsuccess = function (event) {
+	db = event.target.result;
+	console.log("IndexedDB opened successfully");
+};
+request.onupgradeneeded = function (event) {
+	db = event.target.result;
+	const objectStore = db.createObjectStore("users", { keyPath: "studentid" });
+	objectStore.createIndex("username", "username", { unique: false });
+	objectStore.createIndex("city", "city", { unique: false });
+	console.log("Object store created/updated");
+};
+signupform.addEventListener("submit", (event) => {
+	event.preventDefault();
+	const userdetail = {
+		username: event.target.userName.value,
+		studentid: event.target.studentId.value,
+		password: event.target.Password.value,
+		cpassword: event.target.cPassword.value,
+		city: event.target.city.value,
+	};
+	if (
+		userdetail.city.length === 0 ||
+		userdetail.username.length === 0 ||
+		userdetail.studentid.length === 0
+	) {
+		alert("All fields must be filled");
+	} else if (
+		userdetail.password.length <= 7 ||
+		userdetail.cpassword.length <= 7
+	) {
+		alert("Password must be at least 8 characters");
+	} else if (userdetail.password !== userdetail.cpassword) {
+		alert("Passwords do not match!");
+	} else {
+		const transaction = db.transaction(["users"], "readwrite");
+		const objectStore = transaction.objectStore("users");
+		const request = objectStore.add(userdetail);
+
+		request.onsuccess = function (event) {
+			alert("Your account is created - login now");
+		};
+
+		request.onerror = function (event) {
+			alert("Error creating account: " + event.target.error);
+		};
+	}
+});
+</script>
 	</body>
 </html>
